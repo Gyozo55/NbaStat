@@ -1,20 +1,6 @@
-from flask import Flask
-
+from ai.ai import calculate_wins
 from database import add_data_db
-
-app = Flask(__name__)
-
-
-# @app.route('/get-prediction', methods=['GET'])
-# def add_new_aircraft():
-#     try:
-#         pass
-#
-#         return jsonify(created_row_id), 200
-#
-#     except Exception as e:
-#         return Response("Cause: %s" % e, status=400)
-
+from database.get_data import get_predictable_datas
 
 if __name__ == '__main__':
     # Initial functions:
@@ -22,4 +8,4 @@ if __name__ == '__main__':
     add_data_db.add_games_data()
     add_data_db.add_rankings_data()
 
-    # app.run(debug=True)
+    print(calculate_wins(get_predictable_datas()))
