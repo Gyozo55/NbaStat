@@ -1,7 +1,6 @@
-import json
-from flask import Flask, request, jsonify, Response
+from flask import Flask
 
-from database import database_creation
+from database import add_data_db
 
 app = Flask(__name__)
 
@@ -18,7 +17,9 @@ app = Flask(__name__)
 
 
 if __name__ == '__main__':
-    database_creation.create_db_table('teams')
-    database_creation.create_db_table('games')
-    database_creation.create_db_table('ranking')
+    # Initial functions:
+    add_data_db.add_teams_data()
+    add_data_db.add_games_data()
+    add_data_db.add_rankings_data()
+
     # app.run(debug=True)
