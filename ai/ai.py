@@ -25,6 +25,6 @@ def calculate_wins(data):
             successful_pred += 1
 
     # Right prediction %
-    result = round((successful_pred / len(predictions)) * 100, 2)
+    result = f"{round((successful_pred / len(predictions)) * 100, 2)} %"
 
     return result
