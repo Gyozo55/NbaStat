@@ -20,7 +20,7 @@ def calculate_wins(data):
     successful_pred = 0
 
     for x in range(len(predictions)):
-        # print(round(predictions[x]), x_test[x], y_test[x])
+        print(round(predictions[x]), x_test[x], y_test[x])
         if round(predictions[x]) == y_test[x]:
             successful_pred += 1
 
